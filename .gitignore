@@ -1,0 +1,17 @@
+.*
+!.*ignore*
+!.github
+*.log
+
+# node projects
+node_modules/
+dist/
+
+# meetup-31-jan-2023
+actions-runner
+
+# quasar-project
+!quasar-project/.vscode
+!quasar-project/.*rc
+!quasar-project/.*rc.js
+!quasar-project/.editorconfig
