@@ -1,0 +1,28 @@
+name: Meetup 31-Jan-2023
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    # runs-on: ubuntu-20.04
+    runs-on: # must meet all label requirements
+      - self-hosted
+      - meir-macbook-m1
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Global Dependencies
+        # Skip installing global dependencies on my (meir) machine
+        if: ${{ !contains(runner.name, 'meir') }}
+        run: |
+          yarn global add @quasar/cli
+      - name: Install dependencies
+        run: |
+          cd quasar-project && yarn install
+      - name: Lint
+        run: |
+          cd quasar-project && yarn lint
+      - name: Build
+        run: |
+          cd quasar-project && quasar build
