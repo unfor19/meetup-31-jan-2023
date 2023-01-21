@@ -55,12 +55,18 @@ The [sample app project](./quasar-project/) was generated with [yarn create quas
             ```
 3. Check the runner is up and running - Idle means "waiting to run jobs"
 4. Trigger the workflow dispatch from the GUI or with [GitHub CLI](https://cli.github.com/)
-   ```bash
-   gh auth login
-   ```
-   ```bash
-   gh workflow run ...
-   ```
+   - Authenticate GitHub CLI for the first time ever
+      ```bash
+      gh auth login
+      ```
+   - Trigger a `workflow_dispatch`
+      ```bash
+      gh workflow run Meetup-31-Jan-2023
+      ```
+   - View the run
+      ```bash
+      gh run list --workflow=pipeline.yml
+      ```
 
 #### Notes
 
