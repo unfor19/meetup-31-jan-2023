@@ -83,7 +83,13 @@ The [sample app project](./quasar-project/) was generated with [yarn create quas
 
 ### Aligning The Development Process With CI/CD Using A Makefile
 
-...
+At this point the pipeline works and if you follow the instructions in [./quasar-project/README.md](./quasar-project/README.md) you'll be able to:
+- Install dependencies with [yarn](https://yarnpkg.com/)
+- [Lint](https://en.wikipedia.org/wiki/Lint_(material)) the code with [ESLint](https://eslint.org/) 
+- Build the app with [Quasar](https://quasar.dev/quasar-cli-vite/developing-spa/deploying#general-deployment) (`./quasar-project/dist/spa`) so it can be deployed later on
+- Run the app locally with [Quasar](https://quasar.dev/start/quasar-cli#installation-project-scaffolding) for local development
+
+To make sure developers and CI/CD use the same commands, I prefer to abstract it with a [Makefile](./Makefile).
 
 ## Authors
 
