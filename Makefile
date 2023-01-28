@@ -59,21 +59,21 @@ help: ## Available make commands
 usage: help         
 
 
-install-global-dependencies:
+install-global-dependencies: ## Install global dependencies
 	yarn global add @quasar/cli
 
 
-install-dependencies:
+install-dependencies: ## Install app dependencies
 	cd ${APP_DIR_PATH} && yarn install
 
 
-lint:
+lint: ## Lint app
 	cd ${APP_DIR_PATH} && yarn lint
 
 
-build:
+build: ## Build app
 	cd ${APP_DIR_PATH} && quasar build
 
 
-run:
+run: ## Run app locally
 	cd ${APP_DIR_PATH} && quasar dev
