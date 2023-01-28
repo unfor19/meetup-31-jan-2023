@@ -15,10 +15,10 @@ env:
 jobs:
   build:
     name: Build
-    # runs-on: ubuntu-20.04
-    runs-on: # must meet all label requirements
-      - self-hosted
-      - meir-macbook-m1
+    runs-on: ubuntu-20.04
+    # runs-on: # must meet all label requirements
+    #   - self-hosted
+    #   - meir-macbook-m1
     steps:
       - uses: actions/checkout@v3
       - name: Debugging - Setup tmate session
