@@ -57,3 +57,19 @@ help: ## Available make commands
 	@echo
 	
 usage: help         
+
+
+install-dependencies:
+	cd ${APP_DIR_PATH} && yarn install
+
+
+lint:
+	cd ${APP_DIR_PATH} && yarn lint
+
+
+build:
+	cd ${APP_DIR_PATH} && quasar build
+
+
+run:
+	cd ${APP_DIR_PATH} && quasar dev
