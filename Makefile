@@ -59,6 +59,10 @@ help: ## Available make commands
 usage: help         
 
 
+install-global-dependencies:
+	yarn global add @quasar/cli
+
+
 install-dependencies:
 	cd ${APP_DIR_PATH} && yarn install
 

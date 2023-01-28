@@ -15,14 +15,10 @@ jobs:
       - name: Install Global Dependencies
         # Skip installing global dependencies on my (meir) machine
         if: ${{ !contains(runner.name, 'meir') }}
-        run: |
-          yarn global add @quasar/cli
+        run: make install-global-dependencies
       - name: Install dependencies
-        run: |
-          cd quasar-project && yarn install
+        run: make install-dependencies
       - name: Lint
-        run: |
-          cd quasar-project && yarn lint
+        run: make lint
       - name: Build
-        run: |
-          cd quasar-project && quasar build
+        run: make build
