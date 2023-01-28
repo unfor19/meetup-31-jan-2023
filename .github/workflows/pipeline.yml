@@ -2,6 +2,15 @@ name: Meetup-31-Jan-2023
 
 on:
   workflow_dispatch:
+    inputs:
+      DEBUGGING:
+        type: boolean
+        required: false
+        default: false
+        description: "Run the build with tmate debugging enabled (https://github.com/marketplace/actions/debugging-with-tmate)"
+
+env:
+  DEBUGGING: ${{ github.event.inputs.DEBUGGING }}
 
 jobs:
   build:
@@ -12,6 +21,11 @@ jobs:
       - meir-macbook-m1
     steps:
       - uses: actions/checkout@v3
+      - name: Debugging - Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        if: ${{ env.DEBUGGING == 'true' }}
+        with:
+          limit-access-to-actor: true # Otherwise anyone can SSH
       - name: Install Global Dependencies
         # Skip installing global dependencies on my (meir) machine
         if: ${{ !contains(runner.name, 'meir') }}
