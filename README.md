@@ -12,6 +12,7 @@ The [sample app project](./quasar-project/) was generated with [yarn create quas
 1. How To Run A GitHub Runner Locally using a [self-hosted runner](https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners)
 2. Aligning the development process with CI/CD using a [Makefile](https://opensource.com/article/18/8/what-how-makefile)
 3. Testing [workflow_dispatch](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch) before merging to the [default branch](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch)
+4. Debugging a running pipeline with [action-tmate](https://github.com/mxschmitt/action-tmate)
 
 ### Requirements
 
@@ -84,6 +85,14 @@ The [sample app project](./quasar-project/) was generated with [yarn create quas
 ### Aligning The Development Process With CI/CD Using A Makefile
 
 ...
+
+### Debugging a running pipeline with action-tmate
+
+In case you want to debug the pipeline during runtime, you might want to SSH to the runner during the step execution to check for variables, secrets, etc.
+
+Here's a cool GitHub Action which is called [action-tmate](https://github.com/mxschmitt/action-tmate) that enables SSHing to a GitHub runner during runtime, super useful for non-Docker runners.
+
+The way I would do it for a Docker runner - add a `sleep 600` step and then SSH to the host machine (if possible).
 
 ## Authors
 
