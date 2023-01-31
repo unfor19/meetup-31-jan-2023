@@ -3,6 +3,8 @@ name: Meetup-31-Jan-2023
 on:
   workflow_dispatch:
 
+permissions: {}
+
 jobs:
   build:
     name: Build
