@@ -12,6 +12,8 @@ on:
 env:
   DEBUGGING: ${{ github.event.inputs.DEBUGGING }}
 
+permissions: {}
+
 jobs:
   build:
     name: Build
