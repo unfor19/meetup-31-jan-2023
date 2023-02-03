@@ -105,6 +105,13 @@ build                         Build app
 run                           Run app locally
 ```
 
+
+### Testing workflow_dispatch before merging to the default branch
+
+Before performing the below, make sure to notify relevant entities in your organization.
+
+[Set the new branch](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch) `feature/new-workflow-dispatch` as the default branch, trigger the workflow dispatch, and then revert back by setting `master` as the default branch.
+
 ## Authors
 
 Created and maintained by [Meir Gabay](https://github.com/unfor19)
