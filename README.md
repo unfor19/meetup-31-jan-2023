@@ -15,6 +15,7 @@ Initial fork of this repo - https://github.com/unfor19-org/meetup-31-jan-2023-in
 2. Aligning the development process with CI/CD using a [Makefile](https://opensource.com/article/18/8/what-how-makefile)
 3. Testing [workflow_dispatch](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch) before merging to the [default branch](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch)
 
+
 ### Requirements
 
 - [Node 16.x+](https://nodejs.org/en/download/current/)
@@ -85,7 +86,24 @@ Initial fork of this repo - https://github.com/unfor19-org/meetup-31-jan-2023-in
 
 ### Aligning The Development Process With CI/CD Using A Makefile
 
-...
+At this point the pipeline works and if you follow the instructions in [./quasar-project/README.md](./quasar-project/README.md) you'll be able to:
+- Install dependencies with [yarn](https://yarnpkg.com/)
+- [Lint](https://en.wikipedia.org/wiki/Lint_(material)) the code with [ESLint](https://eslint.org/) 
+- Build the app with [Quasar](https://quasar.dev/quasar-cli-vite/developing-spa/deploying#general-deployment) (`./quasar-project/dist/spa`) so it can be deployed later on
+- Run the app locally with [Quasar](https://quasar.dev/start/quasar-cli#installation-project-scaffolding) for local development
+
+To make sure developers and CI/CD use the same commands, I prefer to abstract it with a [Makefile](./Makefile).
+
+To view available commands, execute: `make help`
+
+```
+help                          Available make commands
+install-global-dependencies   Install global dependencies
+install-dependencies          Install app dependencies
+lint                          Lint app
+build                         Build app
+run                           Run app locally
+```
 
 ## Authors
 
